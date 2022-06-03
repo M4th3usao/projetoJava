@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+		<meta charset="ISO-8859-1">
+		<link rel="stylesheet" th:href="@{css/principal.css}">
+		<script th:src="@{js/teste.js}"> 
+		</script>
+		<title>World of Sneakers</title>
+</head>
+
+<body>
+		
+	<div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a th:href="@{/home}"><img th:src="@{img/tiger.png}" width="125px"></a>
+                </div>
+                <nav>
+                	<ul id="MenuItems">
+                    <li><a th:href="@{/index}">Home</a></li>
+                    <li><a th:href="@{/cliente}">Inserir</a></li>
+                    
+                </ul>
+                </nav>
+                <a th:href="@{/carrinho}"><img th:src="@{img/cart.png}" width="30px" height="30px"></a>
+                <!--  <img th:src="@{img/menu.png}" class="menu-icon" th:onclick="menutoggle()"> -->
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Um Novo Estilo de Treino<br> Somente Seu!</h1>
+                    <p>O sucesso nem sempre se trata de grandeza. É uma questão de consistência.<br> O trabalho árduo consistente obtém sucesso. A grandeza virá!</p>
+                    <a  class="btn">Explore Agora &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img th:src="@{img/jordanHeader.png}">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+    	<p>Cliente inserido com sucesso</p>
+    </div>
+		
+</body>
+</html>
