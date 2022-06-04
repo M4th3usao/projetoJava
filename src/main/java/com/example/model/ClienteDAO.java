@@ -1,4 +1,4 @@
-package com.exmple.model;
+package com.example.model;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
