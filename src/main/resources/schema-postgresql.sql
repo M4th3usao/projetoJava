@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS cliente (
+CREATE TABLE IF NOT EXISTS conta (
 	id serial PRIMARY KEY,
 	nome varchar(50),
-	cpf varchar(11)
+	cpf varchar(16)
 );

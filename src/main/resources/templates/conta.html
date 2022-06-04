@@ -47,15 +47,15 @@
                      </div>
 
 
-                     <form id="LoginForm">
-                         <input type="text" placeholder="Username">
-                         <input type="password " placeholder="Password">
+                     <form id="LoginForm" th:action="@{conta}" method="POST" th:object="${cli}">
+                         <input type="text" placeholder="Nome" th:field="*{nome}">
+                         <input type="text" placeholder="CPF" th:field="*{cpf}">
                          <button type="submit" class="btn">Login</button>
                          <a href="">Esqueceu sua Senha?</a>
                      </form>
 
                      <form id="RegForm">
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Nome">
                         <input type="email " placeholder="Email">
                         <input type="password" placeholder="Password">
                         <button type="submit" class="btn">Registrar</button>

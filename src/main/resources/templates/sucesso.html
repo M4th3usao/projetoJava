@@ -1,47 +1,115 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
-		<meta charset="ISO-8859-1">
-		<link rel="stylesheet" th:href="@{css/principal.css}">
-		<script th:src="@{js/teste.js}"> 
-		</script>
-		<title>World of Sneakers</title>
-</head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" th:href="@{css/principal.css}">
+    <script th:src="@{js/teste.js}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Conta - World of Sneakers</title>
 
+</head>
 <body>
-		
-	<div class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <a th:href="@{/home}"><img th:src="@{img/tiger.png}" width="125px"></a>
-                </div>
-                <nav>
-                	<ul id="MenuItems">
-                    <li><a th:href="@{/index}">Home</a></li>
-                    <li><a th:href="@{/cliente}">Inserir</a></li>
-                    
-                </ul>
-                </nav>
-                <a th:href="@{/carrinho}"><img th:src="@{img/cart.png}" width="30px" height="30px"></a>
-                <!--  <img th:src="@{img/menu.png}" class="menu-icon" th:onclick="menutoggle()"> -->
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a th:href="@{/home}"><img th:src="@{/img/tiger.png}"  width="125px"></a>
             </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a th:href="@{/home}">Home</a></li>
+                    <li><a th:href="@{/produtos}">Produtos</a></li>
+                    <li><a th:href="@{/sobre}">Sobre</a></li>
+                    <li><a th:href="@{/conta}">Conta</a></li>
+                    <li><a th:href="@{/cliente}">Inserir</a></li>
+                </ul>
+            </nav>
+            <a th:href="@{/carrinho}"><img th:src="@{/img/cart.png}" width="30px" height="30px"></a>
+            <img th:src="@{/img/menu.png}" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <div class="sucesso-page">
+        <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <h1>Um Novo Estilo de Treino<br> Somente Seu!</h1>
-                    <p>O sucesso nem sempre se trata de grandeza. É uma questão de consistência.<br> O trabalho árduo consistente obtém sucesso. A grandeza virá!</p>
-                    <a  class="btn">Explore Agora &#8594;</a>
+                    <img th:src="@{/img/image1.png}" width="100%">
                 </div>
+   
                 <div class="col-2">
-                    <img th:src="@{img/jordanHeader.png}">
+                    <div class="sucesso-container">
+                        <h2>Parabéns</h2>
+                       
+                        <div class="sucesso-conteudo">
+                            <span> Seja bem vindo a World Of Sneakers!</span>
+                            <a th:href="@{/home}"> <img th:src="@{/imgPages/sucessoImg.png}"  width="50%"></a>
+                        </div>
+            
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div>
-    	<p>Cliente inserido com sucesso</p>
+
+<!--------------- Footer = Rodapé ---------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Baixe nosso App</h3>
+                <p>Baixe o App para celular Android e IOS</p>
+                <div class="app-logo">
+                   <img th:src="@{/img/play-store.png}"> 
+                   <img th:src="@{/img/app-store.png}">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img th:src="@{/img/lion.png}">
+                <p>Nosso objetivo é tornar o prazer e os benefícios dos esportes acessíveis a muitos</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li>Cupons</li>
+                    <li>Postagem do blog</li>
+                    <li>Política de devolução</li>
+                    <li>Torne-se um Afiliado</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Siga-nos</h3>
+                <ul>
+                    <li>FacebooK</li>
+                    <li>Whatsapp</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p><i class="fa fa-copyright" aria-hidden="true">Copyright 2021 - Matheus Henrique</i></p>
     </div>
+</div>
+
+
+<!-------------------JavaScript Alternar Menu = toggle menu--------------------->   
+    <script>
+        var MenuItems = document.getElementById("MenuItems") 
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+            {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else{
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
 		
 </body>
 </html>

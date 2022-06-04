@@ -20,14 +20,14 @@ public class ClienteDAO {
 		jdbc = new JdbcTemplate(dataSource);
 	}
 	
-	public void inserirCliente(Cliente cliente) {
+	public void inserirCliente(Cliente conta) {
 		String sql = "INSERT INTO cliente(nome, cpf)" +
 					"VALUES (?,?)";
 		Object[] obj = new Object[2];
 		//primeiro ?
-		obj[0] = cliente.getNome();
+		obj[0] = conta.getNome();
 		//segundo ?
-		obj[1] = cliente.getCpf();
+		obj[1] = conta.getCpf();
 		jdbc.update(sql, obj);
 	}
 
