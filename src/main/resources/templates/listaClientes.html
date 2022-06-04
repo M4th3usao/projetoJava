@@ -6,7 +6,7 @@
     <script th:src="@{js/teste.js}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sucesso - World of Sneakers</title>
+    <title>Lista de Clientes - World of Sneakers</title>
 
 </head>
 <body>
@@ -39,12 +39,37 @@
    
                 <div class="col-2">
                     <div class="sucesso-container">
-                        <h2>Parabéns</h2>
+                        <h2>Lista de Clientes</h2>
                        
-                        <div class="sucesso-conteudo">
-                            <span> Seja bem vindo a World Of Sneakers!</span>
-                            <a th:href="@{/home}"> <img th:src="@{/imgPages/sucessoImg.png}"  width="50%"></a>
-                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td><b>ID</b></td>
+                                    <td><b>NOME</b></td>
+                                    <td><b>CPF</b></td>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr th:each="cli : ${clientes}">
+                                    <td th:text="${cli.id}"></td>
+                                    <td th:text="${cli.nome}"></td>
+                                    <td th:text="${cli.cpf}"></td>
+                                    <td>
+                                        <a th:href="@{'upd/' + ${cli.id}}">
+                                            Editar
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form th:action="@{'apagar/cliente/' + ${cli.id}}" method=post>
+                                            <input type="submit" value="X">
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
             
                     </div>
                 </div>

@@ -6,7 +6,7 @@
     <script th:src="@{js/teste.js}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sucesso - World of Sneakers</title>
+    <title>Buscar Nomes - World of Sneakers</title>
 
 </head>
 <body>
@@ -22,7 +22,7 @@
                     <li><a th:href="@{/produtos}">Produtos</a></li>
                     <li><a th:href="@{/sobre}">Sobre</a></li>
                     <li><a th:href="@{/conta}">Conta</a></li>
-                    <li><a th:href="@{/perfil}">Perfil</a></li>
+                    <li><a th:href="@{/cliente}">Inserir</a></li>
                 </ul>
             </nav>
             <a th:href="@{/carrinho}"><img th:src="@{/img/cart.png}" width="30px" height="30px"></a>
@@ -30,27 +30,25 @@
         </div>
     </div>
 
-    <div class="sucesso-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <img th:src="@{/img/image1.png}" width="100%">
-                </div>
-   
-                <div class="col-2">
-                    <div class="sucesso-container">
-                        <h2>Parabéns</h2>
-                       
-                        <div class="sucesso-conteudo">
-                            <span> Seja bem vindo a World Of Sneakers!</span>
-                            <a th:href="@{/home}"> <img th:src="@{/imgPages/sucessoImg.png}"  width="50%"></a>
-                        </div>
-            
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--------------- Account - page---------------->
+ <div class="login-page">
+     <div class="container">
+         <div class="row">
+             <div class="col-2">
+                 <img th:src="@{/imgPages/atleta1.png}" width="100%">
+             </div>
+
+             <div class="col-2">
+                 <div>
+                     <form action="#" id="LoginForm" th:action="@{/buscar/nome}" method=get th:object="${cli}">
+                        <input type="text" placeholder="Nome" th:field="*{nome}">
+                        <button type="submit" class="btn">Buscar</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
 
 <!--------------- Footer = Rodapé ---------------->
 <div class="footer">
@@ -110,6 +108,25 @@
         }
     </script>
 
-		
+<script>
+
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indicator = document.getElementById("Indicator");
+
+        function register(){
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+
+        function login(){
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+
+</script>
+
 </body>
 </html>

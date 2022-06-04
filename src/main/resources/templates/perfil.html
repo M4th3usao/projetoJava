@@ -6,7 +6,7 @@
     <script th:src="@{js/teste.js}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sucesso - World of Sneakers</title>
+    <title>Perfil - World of Sneakers</title>
 
 </head>
 <body>
@@ -42,8 +42,9 @@
                         <h2>Parabéns</h2>
                        
                         <div class="sucesso-conteudo">
-                            <span> Seja bem vindo a World Of Sneakers!</span>
-                            <a th:href="@{/home}"> <img th:src="@{/imgPages/sucessoImg.png}"  width="50%"></a>
+                            <span th:text="${'Perfil de ' + nome }"></span>
+                            <span th:text="${'CPF' + cpf }"></span>
+                            <span th:text="${'ID ' +  id }"></span>
                         </div>
             
                     </div>
