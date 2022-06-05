@@ -481,6 +481,16 @@ form .btn:focus{
 #RegForm{
     left: 0;
 }
+#RegForm-conteudo{
+    width: 100%;
+    height: 180px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 2px solid #ff523b;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
 form a{
     font-size: 12px;
 }

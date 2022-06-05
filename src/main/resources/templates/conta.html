@@ -42,24 +42,22 @@
              <div class="col-2">
                  <div class="form-container">
                      <div class="form-btn">
-                         <span onclick="login()">Login</span>
-                         <span onclick="register()">Registrar</span>
+                         <span onclick="login()">Cadastro</span>
+                         <span onclick="register()">Login</span>
                          <hr id="Indicator">
                      </div>
-
 
                      <form id="LoginForm" th:action="@{conta}" method="POST" th:object="${cli}">
                          <input type="text" placeholder="Nome" th:field="*{nome}">
                          <input type="text" placeholder="CPF" th:field="*{cpf}">
                          <button type="submit" class="btn">Login</button>
-                         <a href="">Esqueceu sua Senha?</a>
                      </form>
 
                      <form id="RegForm">
-                        <input type="text" placeholder="Nome">
-                        <input type="email " placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Registrar</button>
+                        <span id="RegForm-conteudo">
+                            Olá, tudo certo? Seja bem vindo a World of Sneakers<br><br>
+                            Em breve lançaremos a área de Login Personalizado!
+                        </span>
                     </form>
                  </div>
              </div>
