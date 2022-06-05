@@ -88,7 +88,7 @@ public class ProjetoController {
 		model.addAttribute("nome", mapa.get("nome"));
 		model.addAttribute("cpf", mapa.get("cpf"));
 		model.addAttribute("id",id);
-		return "perfil";
+		return "perfilCliente";
 	}
 	
 	@GetMapping("/clientes")

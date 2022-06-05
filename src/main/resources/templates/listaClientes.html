@@ -22,7 +22,8 @@
                     <li><a th:href="@{/produtos}">Produtos</a></li>
                     <li><a th:href="@{/sobre}">Sobre</a></li>
                     <li><a th:href="@{/conta}">Conta</a></li>
-                    <li><a th:href="@{/perfil}">Perfil</a></li>
+                    <li><a th:href="@{/buscar}">Buscar Perfil</a></li>
+                    <li><a th:href="@{/clientes}">Lista de Clientes</a></li>
                 </ul>
             </nav>
             <a th:href="@{/carrinho}"><img th:src="@{/img/cart.png}" width="30px" height="30px"></a>
@@ -34,14 +35,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img th:src="@{/img/image1.png}" width="100%">
+                    <img th:src="@{/img/image3.png}" width="90%">
                 </div>
    
                 <div class="col-2">
                     <div class="sucesso-container">
                         <h2>Lista de Clientes</h2>
                        
-                        <table>
+                        <table >
                             <thead>
                                 <tr>
                                     <td><b>ID</b></td>
@@ -52,8 +53,8 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr th:each="cli : ${clientes}">
+                            <tbody class="table-list">
+                                <tr class="cliente-list" th:each="cli : ${clientes}">
                                     <td th:text="${cli.id}"></td>
                                     <td th:text="${cli.nome}"></td>
                                     <td th:text="${cli.cpf}"></td>

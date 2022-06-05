@@ -502,14 +502,15 @@ form a{
 
 .sucesso-container{
     background: #fff;
-    width: 300px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     position: relative;
     text-align: center;
     padding: 20px 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
-    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 10px;
 }
 
 .sucesso-container h2{
@@ -529,6 +530,13 @@ form a{
 }
 
 /* media query para o tamanho de tela inferior a 600*/
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    .sucesso-container{
+        width: 80%;
+        height: 500px;
+    }
+}
 
 @media only screen and (max-width: 600px){
     .row{

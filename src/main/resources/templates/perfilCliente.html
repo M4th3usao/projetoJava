@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="ISO-8859-1">
+    <script th:src="@{js/teste.js}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Perfil - World of Sneakers</title>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a th:href="@{/home}"><img th:src="@{/img/tiger.png}"  width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a th:href="@{/home}">Home</a></li>
+                    <li><a th:href="@{/produtos}">Produtos</a></li>
+                    <li><a th:href="@{/sobre}">Sobre</a></li>
+                    <li><a th:href="@{/conta}">Conta</a></li>
+                    <li><a th:href="@{/buscar}">Buscar Perfil</a></li>
+                    <li><a th:href="@{/clientes}">Lista de Clientes</a></li>
+                </ul>
+            </nav>
+            <a th:href="@{/carrinho}"><img th:src="@{/img/cart.png}" width="30px" height="30px"></a>
+            <img th:src="@{/img/menu.png}" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <div class="sucesso-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img th:src="@{/img/image4.png}" width="70%">
+                </div>
+   
+                <div class="col-2">
+                    <div class="sucesso-container">
+                        <h2>Detalhes do Perfil</h2>
+                       
+                        <div class="sucesso-conteudo">
+                            <span th:text="${'Perfil de: ' + nome }"></span>
+                            <span th:text="${'CPF: ' + cpf }"></span>
+                            <span th:text="${'ID: ' +  id }"></span>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--------------- Footer = Rodapé ---------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Baixe nosso App</h3>
+                <p>Baixe o App para celular Android e IOS</p>
+                <div class="app-logo">
+                   <img th:src="@{/img/play-store.png}"> 
+                   <img th:src="@{/img/app-store.png}">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img th:src="@{/img/lion.png}">
+                <p>Nosso objetivo é tornar o prazer e os benefícios dos esportes acessíveis a muitos</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li>Cupons</li>
+                    <li>Postagem do blog</li>
+                    <li>Política de devolução</li>
+                    <li>Torne-se um Afiliado</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Siga-nos</h3>
+                <ul>
+                    <li>FacebooK</li>
+                    <li>Whatsapp</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p><i class="fa fa-copyright" aria-hidden="true">Copyright 2021 - Matheus Henrique</i></p>
+    </div>
+</div>
+
+
+<!-------------------JavaScript Alternar Menu = toggle menu--------------------->   
+    <script>
+        var MenuItems = document.getElementById("MenuItems") 
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+            {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else{
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <style>
+        
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display:flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
+p{
+    color: #555;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+} 
+.btn{
+    display: inline-block;
+    background:#ff523b;
+    color:#fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #563434;
+}
+
+.header{
+    /* background: radial-gradient(#fff,#ffd6d6); */
+    background: radial-gradient(rgb(247, 239, 239), rgb(55, 60, 138));
+}
+
+.header .row{
+    margin-top: 70px;
+}
+
+.categorias{
+    margin: 70px 0;
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title::after{
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h4{
+    color: #555;
+    font-weight: normal;
+}
+
+
+/*--------------- Sucesso page----------------*/
+.sucesso-page{
+    padding: 50px 0;
+    background: radial-gradient(rgb(247, 239, 239), rgb(55, 60, 138)) !important;
+}
+
+.sucesso-container{
+    background: #fff;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    overflow-y: hidden;
+    border-radius: 10px;
+}
+
+.sucesso-container h2{
+    font-weight: bold;
+}
+
+.sucesso-conteudo {
+    align-items: center;   
+    justify-content: center;
+}
+.sucesso-conteudo span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+
+
+/*---------------Footer-----------------*/
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer:p{
+    color:#8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom:  20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 250px;
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 140px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+
+/*-------------Parte Responsiva-----------------*/
+.menu-icon{
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+/*------------- media query para o menu-----------------*/
+
+@media only screen and (max-width: 800px){
+
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;/*-- O menu desce lentamente--*/
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #fff;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+
+    </style>
+
+</body>
+</html>
